@@ -64,6 +64,7 @@ while True:
         length = math.hypot(x2-x1, y2-y1)
         # print(length)
 
+        #ok
         # Dai am thanh tren may
         vol = np.interp(length, [25, 230], [minVol, maxVol])
         volBar = np.interp(length, [25, 230], [180, 30])
