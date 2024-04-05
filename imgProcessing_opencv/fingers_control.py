@@ -53,13 +53,13 @@ while True:
         x1, y1 = lmList[4][1], lmList[4][2]
         x2, y2 = lmList[8][1], lmList[8][2]
 
-        cv2.circle(frame, (x1, y1), 15, (255, 255, 0), -1)
-        cv2.circle(frame, (x2, y2), 15, (255, 255, 0), -1)
+        cv2.circle(frame, (x1, y1), 10, (255, 255, 0), -1)
+        cv2.circle(frame, (x2, y2), 10, (255, 255, 0), -1)
 
         cv2.line(frame, (x1, y1), (x2, y2), (255, 255, 0), 3)
 
         cx, cy = (x1+x2)//2, (y1+y2)//2
-        cv2.circle(frame, (cx, cy), 15, (255, 255, 0), -1)
+        cv2.circle(frame, (cx, cy), 10, (255, 255, 0), -1)
 
         length = math.hypot(x2-x1, y2-y1)
         # print(length)
@@ -73,9 +73,9 @@ while True:
         print(length, vol)
 
         if length < 25:
-            cv2.circle(frame, (cx, cy), 15, (0, 0, 255), -1)
+            cv2.circle(frame, (cx, cy), 10, (0, 0, 255), -1)
         if length > 230:
-            cv2.circle(frame, (cx, cy), 15, (0, 0, 255), -1)
+            cv2.circle(frame, (cx, cy), 10, (0, 0, 255), -1)
 
         cv2.rectangle(frame, (30, 30), (60, 180), (0, 255, 0), 1)
         cv2.rectangle(frame, (30, 180), (60, int(volBar)), (0, 255, 0), -1)
