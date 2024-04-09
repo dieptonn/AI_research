@@ -35,7 +35,7 @@ print('encoding successfully')
 
 # startup video capture
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture('video_test.mp4')
 
 
@@ -43,7 +43,7 @@ while True:
 
     ret, frame = cap.read()
 
-    frame = cv2.resize(frame, (0, 0), None, fx=0.5, fy=0.5)
+    # frame = cv2.resize(frame, (0, 0), None, fx=0.5, fy=0.5)
     frameS = cv2.resize(frame, (0, 0), None, fx=0.5, fy=0.5)
     frameS = cv2.cvtColor(frameS, cv2.COLOR_BGR2RGB)
 
