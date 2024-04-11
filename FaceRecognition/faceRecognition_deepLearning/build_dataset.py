@@ -1,5 +1,5 @@
 # USAGE
-# python build_dataset.py --output dataset/diepton
+# python build_dataset.py --output dataset_capture/diepton
 
 import argparse
 import cv2
@@ -7,7 +7,7 @@ import os
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", required=True,
-                help="dataset/")
+                help="dataset_capture/")
 args = vars(ap.parse_args())
 
 # Kiểm tra xem thư mục output đã tồn tại chưa
@@ -23,9 +23,11 @@ while True:
     key = cv2.waitKey(1) & 0xFF
 
     if key == ord("k"):
-        # điền thêm số 0 bên trái cho đủ 5 kí tự
+        # Tạo đường dẫn cho ảnh với tên thư mục là args["output"]
+        # và tên ảnh có dạng "args["output"]_{}.png"
         p = os.path.sep.join(
-            [args["output"], "{}.png".format(str(total).zfill(5))])
+            [args["output"], "{}_{}.png".format(os.path.basename(args["output"]), str(total).zfill(5))])
+
         cv2.imwrite(p, frame)
         total += 1
         # nhấn q để thoát
